@@ -1,3 +1,0 @@
-#!/bin/bash
-ip addr | grep "ether"| awk '{print $2}'  
-
