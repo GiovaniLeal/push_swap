@@ -18,7 +18,7 @@
 /*  Swaps the first 2 elements at the top of stack a.                         */
 /*  Does nothing if there is only one or no elements.                         */
 /* ************************************************************************** */
-void	ft_swap_sa(t_stack **stack_a)
+void	ft_swap_sa(t_stack **stack_a, int print)
 {
 	t_node_stack	*first;
 	t_node_stack	*second;
@@ -32,7 +32,8 @@ void	ft_swap_sa(t_stack **stack_a)
 	first->next = second->next;
 	second->next = first;
 	(*stack_a)->top = second;
-	ft_printf("sa\n");
+	if (print)
+		ft_printf("sa\n");
 }
 
 /* ************************************************************************** */
@@ -41,7 +42,7 @@ void	ft_swap_sa(t_stack **stack_a)
 /*  Swaps the first 2 elements at the top of stack b.                         */
 /*  Does nothing if there is only one or no elements.                         */
 /* ************************************************************************** */
-void	ft_swap_sb(t_stack **stack_b)
+void	ft_swap_sb(t_stack **stack_b, int print)
 {
 	t_node_stack	*first;
 	t_node_stack	*second;
@@ -55,7 +56,8 @@ void	ft_swap_sb(t_stack **stack_b)
 	first->next = second->next;
 	second->next = first;
 	(*stack_b)->top = second;
-	ft_printf("sb\n");
+	if (print)
+		ft_printf("sb\n");
 }
 
 /* ************************************************************************** */
@@ -67,8 +69,8 @@ void	ft_swap_sb(t_stack **stack_b)
 void	ft_swap_ss(t_stack **stack_a, t_stack **stack_b )
 {
 	if (stack_a && *stack_a && (*stack_a)->top && (*stack_a)->top->next)
-		ft_swap_sa(stack_a);
+		ft_swap_sa(stack_a, 0);
 	if (stack_b && *stack_b && (*stack_b)->top && (*stack_b)->top->next)
-		ft_swap_sb(stack_b);
+		ft_swap_sb(stack_b, 0);
 	ft_printf("ss\n");
 }
