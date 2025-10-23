@@ -37,7 +37,7 @@ void	ft_push_pa(t_stack **stack_a, t_stack **stack_b)
 /*                                                                            */
 /* 	    Pushes the top element from stack A to stack B                  */
 /* ************************************************************************** */
-void	ft_push_pa(t_stack **stack_a, t_stack **stack_b)
+void	ft_push_pb(t_stack **stack_a, t_stack **stack_b)
 {
 	t_node_stack	*node_to_move;
 
