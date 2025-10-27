@@ -28,7 +28,7 @@ int	ft_is_sorted(t_stack *a_stack)
 	if (!a_stack || !a_stack->top)
 		return (1);
 	temp_node = a_stack->top;
-	while (temp_node->next)
+	while (temp_node && temp_node->next)
 	{
 		if (temp_node->number > temp_node->next->number)
 			return (0);
@@ -64,5 +64,5 @@ int	main(int argc, char *argv[])
 			ft_radix_sort(a_stack);
 	}
 	ft_clear_stack(&a_stack);
-	return (0);
+	return (0);			
 }

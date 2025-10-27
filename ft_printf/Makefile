@@ -38,6 +38,7 @@ SRC_BONUS = ft_printf_bonus.c \
 
 OBJ     = $(SRC:.c=.o)
 OBJ_BONUS = $(SRC_BONUS:.c=.o)
+INCLUDES = -Iincludes -Ift_printf/includes -I.
 
 # **************************************************************************** #
 #                                RULES                                         #
@@ -58,7 +59,7 @@ bonus: clean
 
 # Generic compilation rule
 %.o: %.c
-	$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) $(INCLUDES) -c $< -o $@
 clean:
 	$(RM) $(OBJ) $(OBJ_BONUS)
 
