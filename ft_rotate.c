@@ -14,7 +14,7 @@
 
 /* ************************************************************************** */
 /*                              FT_ROTATE_RA                                  */
-/*                                                                            */
+/*  Move all elements of stack a up by 1.The first element becomes the last.  */
 /* ************************************************************************** */
 void	ft_rotate_ra(t_stack **stack_a, int print)
 {
@@ -36,7 +36,7 @@ void	ft_rotate_ra(t_stack **stack_a, int print)
 
 /* ************************************************************************** */
 /*                              FT_ROTATE_RB                                  */
-/*                                                                            */
+/*  Move all elements of stack b up by 1.The first element becomes the last.  */
 /* ************************************************************************** */
 void	ft_rotate_rb(t_stack **stack_b, int print)
 {
@@ -58,7 +58,7 @@ void	ft_rotate_rb(t_stack **stack_b, int print)
 
 /* ************************************************************************** */
 /*                              FT_ROTATE_RR                                  */
-/*                                                                            */
+/*           	  ra and rb at the same time         		        */
 /* ************************************************************************** */
 void	ft_rotate_rr(t_stack **stack_a, t_stack **stack_b)
 {
