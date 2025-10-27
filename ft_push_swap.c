@@ -12,7 +12,6 @@
 
 #include "ft_push_swap.h"
 
-
 /* ************************************************************************** */
 /*                             FT_IS_SORTED                                   */
 /*                                                                            */
@@ -27,7 +26,7 @@ int	ft_is_sorted(t_stack *a_stack)
 	t_node_stack	*temp_node;
 
 	if (!a_stack || !a_stack->top)
-		return(1);
+		return (1);
 	temp_node = a_stack->top;
 	while (temp_node->next)
 	{

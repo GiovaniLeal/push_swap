@@ -22,7 +22,7 @@ void	ft_rotate_ra(t_stack **stack_a, int print)
 	t_node_stack	*last_node;
 
 	if (!stack_a || !(*stack_a)->top)
-		return;
+		return ;
 	temp_node = (*stack_a)->top;
 	(*stack_a)->top = temp_node->next;
 	last_node = (*stack_a)->top;
@@ -44,7 +44,7 @@ void	ft_rotate_rb(t_stack **stack_b, int print)
 	t_node_stack	*last_node;
 
 	if (!stack_b || !(*stack_b)->top)
-		return;
+		return ;
 	temp_node = (*stack_b)->top;
 	(*stack_b)->top = temp_node->next;
 	last_node = (*stack_b)->top;
@@ -63,7 +63,7 @@ void	ft_rotate_rb(t_stack **stack_b, int print)
 void	ft_rotate_rr(t_stack **stack_a, t_stack **stack_b)
 {
 	if (!stack_a || !stack_b)
-		return;
+		return ;
 	ft_rotate_ra(stack_a, 0);
 	ft_rotate_rb(stack_b, 0);
 	ft_printf("rr\n");

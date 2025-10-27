@@ -24,9 +24,9 @@ void	ft_swap_sa(t_stack **stack_a, int print)
 	t_node_stack	*second;
 
 	if (!stack_a || !*stack_a)
-		return;
+		return ;
 	if (!(*stack_a)->top || !(*stack_a)->top->next)
-		return;
+		return ;
 	first = (*stack_a)->top;
 	second = first->next;
 	first->next = second->next;
@@ -48,9 +48,9 @@ void	ft_swap_sb(t_stack **stack_b, int print)
 	t_node_stack	*second;
 
 	if (!stack_b || !*stack_b)
-		return;
+		return ;
 	if (!(*stack_b)->top || !(*stack_b)->top->next)
-		return;
+		return ;
 	first = (*stack_b)->top;
 	second = first->next;
 	first->next = second->next;

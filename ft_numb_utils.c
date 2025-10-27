@@ -22,7 +22,7 @@
 
 int	ft_is_digit(char c)
 {
-	if  (c >= '0' && c <= '9' )
+	if (c >= '0' && c <= '9' )
 		return (1);
 	return (0);
 }
@@ -36,14 +36,13 @@ int	ft_is_digit(char c)
 /* ************************************************************************** */
 long	ft_atol(char *str_arg)
 {
-	int	sign;
-	int	index_numb;
+	int		sign;
+	int		index_numb;
 	long	convert_number;
 
 	sign = 1;
 	index_numb = 0;
 	convert_number = 0;
-
 	if (str_arg[index_numb] == '-' || str_arg[index_numb] == '+')
 	{
 		if (str_arg[index_numb] == '-')
@@ -57,4 +56,3 @@ long	ft_atol(char *str_arg)
 	}
 	return (convert_number * sign);
 }
-

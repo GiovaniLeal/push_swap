@@ -52,7 +52,6 @@ t_node_stack	*ft_init_node_stack(int numb, t_stack *a)
 	create_node->index = -1;
 	create_node->next = NULL;
 	return (create_node);
-
 }
 
 /* ************************************************************************** */
@@ -68,12 +67,12 @@ void	ft_stack_add_back(t_stack *a, int numb)
 
 	add_node = ft_init_node_stack(numb, &a);
 	if (!add_node)
-		return;
+		return ;
 	if (!a->top)
 	{
 		a->top = add_node;
 		a->size = 1;
-		return;
+		return ;
 	}
 	temp = a->top->next;
 	while (temp->next)
@@ -98,7 +97,7 @@ void	ft_free_stack(t_stack **a)
 
 	cleaning_node = (*a)->top;
 	if (!a || !*a)
-		return;
+		return ;
 	while (cleaning_node)
 	{
 		next_node = cleaning_node->next;

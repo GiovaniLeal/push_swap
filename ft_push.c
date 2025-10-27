@@ -22,7 +22,7 @@ void	ft_push_pa(t_stack **stack_a, t_stack **stack_b)
 	t_node_stack	*node_to_move;
 
 	if (!stack_a || !stack_b || !(*stack_b)->top)
-		return;
+		return ;
 	node_to_move = (*stack_b)->top;
 	(*stack_b)->top = node_to_move->next;
 	node_to_move->next = (*stack_a)->top;
@@ -42,7 +42,7 @@ void	ft_push_pb(t_stack **stack_a, t_stack **stack_b)
 	t_node_stack	*node_to_move;
 
 	if (!stack_b || !stack_a || !(*stack_a)->top)
-		return;
+		return ;
 	node_to_move = (*stack_a)->top;
 	(*stack_a)->top = node_to_move->next;
 	node_to_move->next = (*stack_b)->top;
