@@ -20,7 +20,7 @@
 /* ************************************************************************** */
 # include <stdlib.h>
 # include <unistd.h>
-# include "ft_printf.h"
+# include "ft_printf/ft_printf.h"
 
 /* ************************************************************************** */
 /*                                STRUCTS                                     */
@@ -44,11 +44,15 @@ typedef struct s_stack
 	t_node_stack	*top;
 }	t_stack;
 
-
 /* ************************************************************************** */
 /* 			     FUNCTIONS 	                            */
 /* ************************************************************************** */
 int		main(int argc, char *argv[]);
+
+/* *************************************************** */
+/*               PUSH_SWAP.C                           */
+/* *************************************************** */
+int		ft_is_sorted(t_stack *a_stack);
 
 /* *************************************************** */
 /*               FT_STACK_UTILS.C                      */
@@ -61,7 +65,7 @@ t_node_stack	*ft_init_node_stack(int numb, t_stack *a);
 /* *************************************************** */
 /*               FT_NUMB_UTILS.C                       */
 /* *************************************************** */
-int	ft_is_digit(char c);
+int		ft_is_digit(char c);
 long	ft_atol(char *str_arg);
 
 /* *************************************************** */
@@ -70,5 +74,42 @@ long	ft_atol(char *str_arg);
 void	ft_parse_args(int argc, char *argv[], t_stack *a);
 void	ft_error_exit(t_stack *a);
 
+/* *************************************************** */
+/*               FT_PUSH_INDEX_NODE.C                  */
+/* *************************************************** */
+void	ft_add_index_node(t_stack **stack_a, int *temp_array);
+int		ft_sort_temp_array(int *array, int start, int end);
+void	ft_bubble_sort(int *array, int size);
+void	ft_put_index_node(t_stack **stack_a);
+
+void	ft_print_array_test(int *array, int size, char *message);
+void	ft_print_stack_indices(t_stack *stack, char *message);
+
+/* *************************************************** */
+/*               FT_PUSH.C                             */
+/* *************************************************** */
+void	ft_push_pa(t_stack **stack_a, t_stack **stack_b);
+void	ft_push_pb(t_stack **stack_a, t_stack **stack_b);
+
+/* *************************************************** */
+/*               FT_REVERSE_ROTATE.C                   */
+/* *************************************************** */
+void	ft_reverse_rotate_a(t_stack **a, int print);
+void	ft_reverse_rotate_b(t_stack **b, int print);
+void	ft_reverse_rotate_rrr(t_stack **a, t_stack **b);
+
+/* *************************************************** */
+/*               FT_ROTATE.C                           */
+/* *************************************************** */
+void	ft_rotate_ra(t_stack **stack_a, int print);
+void	ft_rotate_rb(t_stack **stack_b, int print);
+void	ft_rotate_rr(t_stack **stack_a, t_stack **stack_b);
+
+/* *************************************************** */
+/*               FT_SWAP.C                             */
+/* *************************************************** */
+void	ft_swap_sa(t_stack **stack_a, int print);
+void	ft_swap_sb(t_stack **stack_b, int print);
+void	ft_swap_ss(t_stack **stack_a, t_stack **stack_b);
 
 #endif
