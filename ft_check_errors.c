@@ -11,33 +11,29 @@
 /* ************************************************************************** */
 
 #include "ft_push_swap.h"
-
 /* ************************************************************************** */
-/*                             FT_HAS_DUPLICATES                              */
+/*                             FT_HAS_DUPLICATE                               */
 /*                                                                            */
-/*   Checks if the stack contains any duplicate numbers.                      */
+/*   Checks if the stack already contains the given number.                   */
 /*   Returns:                                                                 */
 /*      1 -> duplicate found                                                  */
-/*      0 -> no duplicates                                                    */
+/*      0 -> no duplicate                                                     */
 /* ************************************************************************** */
-static int	ft_has_duplicates(t_stack *a)
+static int	ft_has_duplicate(t_stack *a, int num)
 {
 	t_node_stack	*temp;
-	t_node_stack	*compare_temp;
 
+	if (!a || !a->top)
+		return (0);  // Stack vazia, não há duplicatas
+	
 	temp = a->top;
 	while (temp)
 	{
-		compare_temp = temp->next;
-		while (compare_temp)
-		{
-			if (temp->number == compare_temp->number)
-				return (1);
-			compare_temp = compare_temp->next;
-		}
+		if (temp->number == num)
+			return (1);  // Encontrou duplicata
 		temp = temp->next;
 	}
-	return (0);
+	return (0);  // Não encontrou duplicata
 }
 
 /* ************************************************************************** */
@@ -100,7 +96,7 @@ static int	ft_is_number(char *string)
 /*   Parses command-line arguments and validates them.                        */
 /*   1 - FT_IS_NUMBER       : checks if the argument is digits or a sign      */
 /*   2 - FT_CHECK_INT_RANGE : checks if the number fits in integer limits     */
-/*   3 - FT_HAS_DUPLICATES  : checks if the stack contains duplicate numbers  */
+/*   3 - FT_HAS_DUPLICATE   : checks if the number is already in the stack    */
 /* ************************************************************************** */
 void	ft_parse_args(int argc, char *argv[], t_stack *a)
 {
@@ -115,9 +111,13 @@ void	ft_parse_args(int argc, char *argv[], t_stack *a)
 		numb = ft_atol(argv[index]);
 		if (!ft_check_int_range(numb))
 			ft_error_exit(a);
+		
+		// ✅ VERIFICA DUPLICATA ANTES de adicionar
+		if (ft_has_duplicate(a, (int)numb))  // Precisará ajustar a função
+			ft_error_exit(a);
+		
+		// ✅ AGORA adiciona na stack
 		ft_stack_add_back(a, (int)numb);
 		index++;
 	}
-	if (ft_has_duplicates(a))
-		ft_error_exit(a);
 }

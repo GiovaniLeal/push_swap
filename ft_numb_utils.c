@@ -51,7 +51,7 @@ long	ft_atol(char *str_arg)
 	}
 	while (ft_is_digit(str_arg[index_numb]))
 	{
-		convert_number = convert_number * 10 +(str_arg[index_numb - '0']);
+		convert_number = convert_number * 10 +(str_arg[index_numb] - '0');
 		index_numb++;
 	}
 	return (convert_number * sign);

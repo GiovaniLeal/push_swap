@@ -25,7 +25,7 @@ t_stack	*ft_init_stack(void)
 	t_stack	*new_stack;
 
 	new_stack = malloc(sizeof(t_stack));
-	if (new_stack)
+	if (!new_stack)
 	{
 		write(2, "Error\n", 6);
 		exit(1);
@@ -65,7 +65,7 @@ void	ft_stack_add_back(t_stack *a, int numb)
 	t_node_stack	*add_node;
 	t_node_stack	*temp;
 
-	add_node = ft_init_node_stack(numb, &a);
+	add_node = ft_init_node_stack(numb, a);
 	if (!add_node)
 		return ;
 	if (!a->top)
@@ -74,8 +74,8 @@ void	ft_stack_add_back(t_stack *a, int numb)
 		a->size = 1;
 		return ;
 	}
-	temp = a->top->next;
-	while (temp->next)
+	temp = a->top;
+	while (temp->next != NULL)
 		temp = temp->next;
 	temp->next = add_node;
 	a->size++;
