@@ -45,24 +45,15 @@ int	ft_is_sorted(t_stack *a_stack)
 /*                                                                            */
 /* ************************************************************************** */
 int	main(int argc, char *argv[])
-{
-	t_stack	*a_stack;
-
+{	
 	if (argc < 2)
 		return (0);
-	a_stack = ft_init_stack();
+	t_stack	*a_stack = ft_init_stack();
 	if (!a_stack)
 		return (1);
 	ft_parse_args(argc, argv, a_stack);
 	if (!ft_is_sorted(a_stack))
-	{
-		if (a_stack->size <= 3)
-			ft_sort_three(a_stack);
-		if (a_stack->size <= 5)
-			ft_sort_five(a_stack);
-		else
-			ft_radix_sort(a_stack);
-	}
-	ft_clear_stack(&a_stack);
-	return (0);			
+		ft_put_index_node(&a_stack);
+	ft_free_stack(&a_stack);
+	return (0);
 }
