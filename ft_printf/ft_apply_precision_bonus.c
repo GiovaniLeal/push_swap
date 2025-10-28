@@ -75,15 +75,14 @@ char	*ft_apply_precision_num(char *num_str, t_fmt *fmt)
 }
 
 /* ************************************************************************** */
-/*   Apply precision for strings                                             */
-/*   - Handles normal strings and NULL                                        */
-/*   - For NULL, behaves like printf: "(null)" truncated according to precision*/
+/*   Apply precision for strings                                              */
+/*  - Handles normal strings and NULL                                         */
+/*  - For NULL, behaves like printf: "(null)" truncated according to precision*/
 /* ************************************************************************** */
 char	*ft_apply_precision_str(char *str, t_fmt *fmt)
 {
 	size_t	str_len;
 	size_t	prec_len;
-
 
 	str_len = ft_strlen(str);
 	if (fmt->precision_specified)

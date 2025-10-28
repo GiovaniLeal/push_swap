@@ -24,16 +24,15 @@ static int	ft_has_duplicate(t_stack *a, int num)
 	t_node_stack	*temp;
 
 	if (!a || !a->top)
-		return (0);  // Stack vazia, não há duplicatas
-	
+		return (0);
 	temp = a->top;
 	while (temp)
 	{
 		if (temp->number == num)
-			return (1);  // Encontrou duplicata
+			return (1);
 		temp = temp->next;
 	}
-	return (0);  // Não encontrou duplicata
+	return (0);
 }
 
 /* ************************************************************************** */
@@ -111,12 +110,8 @@ void	ft_parse_args(int argc, char *argv[], t_stack *a)
 		numb = ft_atol(argv[index]);
 		if (!ft_check_int_range(numb))
 			ft_error_exit(a);
-		
-		// ✅ VERIFICA DUPLICATA ANTES de adicionar
-		if (ft_has_duplicate(a, (int)numb))  // Precisará ajustar a função
+		if (ft_has_duplicate(a, (int)numb))
 			ft_error_exit(a);
-		
-		// ✅ AGORA adiciona na stack
 		ft_stack_add_back(a, (int)numb);
 		index++;
 	}

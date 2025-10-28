@@ -35,7 +35,7 @@ typedef struct s_node_stack
 {
 	int					number;
 	int					index;
-	struct s_node_stack		*next;	
+	struct s_node_stack	*next;	
 }	t_node_stack;
 
 typedef struct s_stack
@@ -57,9 +57,9 @@ int		ft_is_sorted(t_stack *a_stack);
 /* *************************************************** */
 /*               FT_STACK_UTILS.C                      */
 /* *************************************************** */
-t_stack	*ft_init_stack(void);
 void	ft_free_stack(t_stack **a);
 void	ft_stack_add_back(t_stack *a, int numb);
+t_stack	*ft_init_stack(void);
 t_node_stack	*ft_init_node_stack(int numb, t_stack *a);
 
 /* *************************************************** */
@@ -81,9 +81,6 @@ void	ft_add_index_node(t_stack **stack_a, int *temp_array);
 int		ft_sort_temp_array(int *array, int start, int end);
 void	ft_bubble_sort(int *array, int size);
 void	ft_put_index_node(t_stack **stack_a);
-
-void	ft_print_array_test(int *array, int size, char *message);
-void	ft_print_stack_indices(t_stack *stack, char *message);
 
 /* *************************************************** */
 /*               FT_PUSH.C                             */

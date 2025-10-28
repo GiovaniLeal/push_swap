@@ -97,22 +97,19 @@ char	*ft_apply_width_bonus(char *str, t_fmt *fmt)
 	int		is_null_char;
 
 	is_null_char = (fmt->specifier == 'c' && str[0] == '\0');
-	str_len = is_null_char ? 1 : ft_strlen(str);
-	
+	str_len = ft_strlen(str);
+	if (is_null_char)
+		str_len = 1;
 	if ((size_t)fmt->width <= str_len)
-		return str;
+		return (str);
 	pad_len = fmt->width - str_len;
 	res = malloc(fmt->width + 1);
 	if (!res)
 		return (ft_strdup(str));
-
 	if (fmt->flags & FLAG_MINUS)
 		ft_apply_left(res, str, str_len, pad_len);
 	else
 		ft_apply_right(res, str, fmt, str_len);
-
 	res[fmt->width] = '\0';
 	return (res);
 }
-
-

@@ -17,7 +17,7 @@
 /* ************************************************************************** */
 void	ft_add_index_node(t_stack **stack_a, int *temp_array)
 {
-	int			array_index;
+	int				array_index;
 	t_node_stack	*current_node;
 
 	current_node = (*stack_a)->top;
@@ -29,7 +29,7 @@ void	ft_add_index_node(t_stack **stack_a, int *temp_array)
 			if (current_node->number == temp_array[array_index])
 			{
 				current_node->index = array_index;
-				break;
+				break ;
 			}
 			array_index++;
 		}
@@ -87,43 +87,6 @@ void	ft_bubble_sort(int *array, int size)
 }
 
 /* ************************************************************************** */
-/*                          FT_PRINT_ARRAY_TEST                               */
-/* ************************************************************************** */
-void	ft_print_array_test(int *array, int size, char *message)
-{
-	int	i;
-
-	ft_printf("%s: ", message);
-	i = 0;
-	while (i < size)
-	{
-		ft_printf("[%d]", array[i]);
-		if (i < size - 1)
-			ft_printf(" → ");
-		i++;
-	}
-	ft_printf("\n");
-}
-
-/* ************************************************************************** */
-/*                          FT_PRINT_STACK_INDICES                            */
-/* ************************************************************************** */
-void	ft_print_stack_indices(t_stack *stack, char *message)
-{
-	t_node_stack	*current;
-
-	ft_printf("%s\n", message);
-	ft_printf("Stack size: %d\n", stack->size);
-	current = stack->top;
-	while (current)
-	{
-		ft_printf("Value: %d → Index: %d\n", current->number, current->index);
-		current = current->next;
-	}
-	ft_printf("---\n");
-}
-
-/* ************************************************************************** */
 /*                          ft_put_index_node                                 */
 /*                                                                            */
 /*                                                                            */
@@ -140,8 +103,6 @@ void	ft_put_index_node(t_stack **stack_a)
 	temp_array = malloc(sizeof(int) * array_size);
 	if (!temp_array)
 		return ;
-	
-	// 1. Preencher array
 	current_node = (*stack_a)->top;
 	while (i < array_size)
 	{
@@ -149,23 +110,7 @@ void	ft_put_index_node(t_stack **stack_a)
 		current_node = current_node->next;
 		i++;
 	}
-	
-	// TESTE: Mostrar array ANTES da ordenação
-	ft_print_array_test(temp_array, array_size, "Array ANTES da ordenação");
-	
-	// 2. Ordenar array
 	ft_bubble_sort(temp_array, array_size);
-	
-	// TESTE: Mostrar array DEPOIS da ordenação
-	ft_print_array_test(temp_array, array_size, "Array DEPOIS da ordenação");
-	
-	// 3. Atribuir índices
 	ft_add_index_node(stack_a, temp_array);
-	
-	// TESTE: Mostrar stack com índices
-	ft_print_stack_indices(*stack_a, "Stack com índices atribuídos");
-	
 	free(temp_array);
 }
-
-

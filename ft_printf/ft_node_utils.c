@@ -46,4 +46,3 @@ void	ft_add_literal_node(t_node **head, const char *start, size_t len)
 	if (new_node)
 		ft_list_append(head, new_node);
 }
-

@@ -35,8 +35,8 @@ static char	*ft_apply_precision_bonus(char *str, t_fmt *f)
 
 /* ************************************************************************** */
 /*   Format bonus string                                                      */
-/*   - Applies precision, flags, width in correct order                        */
-/*   - Handles NULL strings safely                                             */
+/*   - Applies precision, flags, width in correct order                       */
+/*   - Handles NULL strings safely                                            */
 /* ************************************************************************** */
 char	*ft_format_bonus(char *raw_str, t_fmt *fmt)
 {
@@ -56,38 +56,35 @@ char	*ft_format_bonus(char *raw_str, t_fmt *fmt)
 	if (tmp != raw_str)
 		free(raw_str);
 	raw_str = tmp;
-
 	return (raw_str);
 }
-
 
 /* ************************************************************************** */
 /*   Dispatcher for bonus specifiers                                          */
 /*   - Converts argument and applies formatting                               */
 /* ************************************************************************** */
-char *ft_dispatcher_bonus(t_fmt *fmt, va_list args)
+char	*ft_dispatcher_bonus(t_fmt *fmt, va_list args)
 {
-    char *raw_str;
+	char	*raw_str;
 
-    if (!fmt)
-        return NULL;
-    raw_str = NULL;
-    if (fmt->specifier == 'c')
-        raw_str = ft_put_char_printf((char)va_arg(args, int),0);
-    else if (fmt->specifier == '%')
-        raw_str = ft_put_char_printf('%',1);
-    else if (fmt->specifier == 's')
-        raw_str = ft_put_str_printf(va_arg(args, char *));
-    else if (fmt->specifier == 'd' || fmt->specifier == 'i')
-        raw_str = ft_put_num(fmt->specifier, va_arg(args, int));
-    else if (fmt->specifier == 'u')
-        raw_str = ft_put_num(fmt->specifier, va_arg(args, unsigned int));
-    else if (fmt->specifier == 'x' || fmt->specifier == 'X')
-        raw_str = ft_put_hex(fmt->specifier, va_arg(args, unsigned int));
-    else if (fmt->specifier == 'p')
-        raw_str = ft_put_ptr(va_arg(args, void *));
-    else
-        return NULL;
-    return ft_format_bonus(raw_str, fmt);
+	if (!fmt)
+		return (NULL);
+	raw_str = NULL;
+	if (fmt->specifier == 'c')
+		raw_str = ft_put_char_printf((char)va_arg(args, int), 0);
+	else if (fmt->specifier == '%')
+		raw_str = ft_put_char_printf('%', 1);
+	else if (fmt->specifier == 's')
+		raw_str = ft_put_str_printf(va_arg(args, char *));
+	else if (fmt->specifier == 'd' || fmt->specifier == 'i')
+		raw_str = ft_put_num(fmt->specifier, va_arg(args, int));
+	else if (fmt->specifier == 'u')
+		raw_str = ft_put_num(fmt->specifier, va_arg(args, unsigned int));
+	else if (fmt->specifier == 'x' || fmt->specifier == 'X')
+		raw_str = ft_put_hex(fmt->specifier, va_arg(args, unsigned int));
+	else if (fmt->specifier == 'p')
+		raw_str = ft_put_ptr(va_arg(args, void *));
+	else
+		return (NULL);
+	return (ft_format_bonus(raw_str, fmt));
 }
-

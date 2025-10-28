@@ -45,10 +45,12 @@ int	ft_is_sorted(t_stack *a_stack)
 /*                                                                            */
 /* ************************************************************************** */
 int	main(int argc, char *argv[])
-{	
+{
+	t_stack	*a_stack;
+
 	if (argc < 2)
 		return (0);
-	t_stack	*a_stack = ft_init_stack();
+	a_stack = ft_init_stack();
 	if (!a_stack)
 		return (1);
 	ft_parse_args(argc, argv, a_stack);
