@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: giodos-s <giodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/10/11 19:39:30 by marvin            #+#    #+#             */
-/*   Updated: 2025/10/11 19:39:30 by marvin           ###   ########.fr       */
+/*   Created: 2025/10/11 19:39:30 by giodos-s          #+#    #+#             */
+/*   Updated: 2025/10/11 19:39:30 by giodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,15 +47,21 @@ int	ft_is_sorted(t_stack *a_stack)
 int	main(int argc, char *argv[])
 {
 	t_stack	*a_stack;
+	t_stack	*b_stack;
 
 	if (argc < 2)
 		return (0);
-	a_stack = ft_init_stack();
-	if (!a_stack)
+	a_stack = ft_init_stack(); 
+	b_stack = ft_init_stack();
+	if (!a_stack || !b_stack)
 		return (1);
 	ft_parse_args(argc, argv, a_stack);
 	if (!ft_is_sorted(a_stack))
+	{
 		ft_put_index_node(&a_stack);
+		ft_turk_sort(&a_stack, &b_stack);
+	} 
 	ft_free_stack(&a_stack);
+	ft_free_stack(&b_stack);
 	return (0);
 }
