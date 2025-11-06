@@ -12,7 +12,17 @@
 
 #include "push_swap.h"
 
-int main(void)
+int	main(int argc, char **args)
 {
-    return 0;
+	t_list	*stack_a;
+	t_list	*stack_b;
+
+	stack_a = NULL;
+	stack_b = NULL;
+	if (argc < 2)
+		return (0);
+	if (!init_stack_a(argc, args, &stack_a))
+		return (ft_printf("Error\n"));
+	sort_stack();
+	return (0);
 }

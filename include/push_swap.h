@@ -10,8 +10,8 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PUSH_SWAP_H
-# define FT_PUSH_SWAP_H
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
 /* ************************************************************************** */
 /*         Libraries used: [MALLOC] - [LIBFT] -[FT_PRINTF]                    */
@@ -19,11 +19,11 @@
 # include <stdlib.h>
 # include "../libft/includes/libft.h"
 
-
 /* ************************************************************************** */
 /*                                STRUCT                                      */
 /* Nesse projeto criaremos apenas uma struct para armazenar o custo dos movi- */
-/* mentos. Aproveitaremos a struct da LIBFT [T_LIST] para a criacao de uma lista linkada */
+/* mentos. Aproveitaremos a struct da LIBFT [T_LIST] para a criacao de uma 
+lista linkada */
 /* ************************************************************************** */
 typedef struct s_cost
 {
@@ -33,5 +33,11 @@ typedef struct s_cost
 	int	value;
 }	t_cost;
 
-int main(void);
+/* ************************************************************************** */
+/*       			  FUNCTIONS      			        */
+/* ************************************************************************** */
+int	main(int argc, char **args);
+int	init_stack_a(int num_args, char **args, t_list **stack_a);
+int	*parse_args(int num_args, char **args);
+
 #endif

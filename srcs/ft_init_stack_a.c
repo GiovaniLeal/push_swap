@@ -17,8 +17,7 @@
 /*                                                                            */
 /*   Frees allocated memory on error: content, list and temp array            */
 /* ************************************************************************** */
-
-int	cleanup(int *content, int *temp, t_list **stack_a)
+static int	cleanup(int *content, int *temp, t_list **stack_a)
 {
 	if (content)
 		free(content);
