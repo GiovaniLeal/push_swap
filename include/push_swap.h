@@ -40,4 +40,18 @@ int	main(int argc, char **args);
 int	init_stack_a(int num_args, char **args, t_list **stack_a);
 int	*parse_args(int num_args, char **args);
 
+void	ft_sa(t_list **a, int print);
+void	ft_sb(t_list **b, int print);
+void	ft_ss(t_list **a, t_list **b);
+
+void	ft_pa(t_list **a, t_list **b);
+void	ft_pb(t_list **b, t_list **a);
+
+void	ft_ra(t_list **a, int print);
+void	ft_rb(t_list **b, int print);
+void	ft_rb(t_list **b, int print);
+
+void	ft_rra(t_list **a, int print);
+void	ft_rrb(t_list **b, int print);
+void	ft_rrr(t_list **a, t_list **b);
 #endif

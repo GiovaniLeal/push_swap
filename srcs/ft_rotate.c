@@ -45,7 +45,7 @@ void	ft_rb(t_list **b, int print)
 	node_to_move->next = NULL;
 	ft_lstadd_back_bonus(b, node_to_move);
 	if (print)
-		ft_printf("rb\n"); 
+		ft_printf("rb\n");
 }
 
 /* ************************************************************************** */

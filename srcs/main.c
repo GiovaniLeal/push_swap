@@ -23,6 +23,5 @@ int	main(int argc, char **args)
 		return (0);
 	if (!init_stack_a(argc, args, &stack_a))
 		return (ft_printf("Error\n"));
-	sort_stack();
 	return (0);
 }

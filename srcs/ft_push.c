@@ -12,11 +12,10 @@
 
 #include "push_swap.h"
 
-
 /* ************************************************************************** */
 /* 	Moves the first element from stack B to the top of stack A 	        */
 /* ************************************************************************** */
-void	ft_push_a(t_list **a, t_list **b)
+void	ft_pa(t_list **a, t_list **b)
 {
 	t_list	*node_to_move;
 
@@ -31,7 +30,7 @@ void	ft_push_a(t_list **a, t_list **b)
 /* ************************************************************************** */
 /* 	Moves the first element from stack B to the top of stack A 	        */
 /* ************************************************************************** */
-void	ft_push_b(t_list **b, t_list **a)
+void	ft_pb(t_list **b, t_list **a)
 {
 	t_list	*node_to_move;
 

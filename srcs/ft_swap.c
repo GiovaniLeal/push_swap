@@ -5,15 +5,15 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: giodos-s <giodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/06 20:05:57 by giodos-s          #+#    #+#             */
-/*   Updated: 2025/11/06 20:05:57 by giodos-s         ###   ########.fr       */
+/*   Created: 2025/11/06 23:31:12 by giodos-s          #+#    #+#             */
+/*   Updated: 2025/11/06 23:31:12 by giodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
 /* ************************************************************************** */
-/*	swap_a: Swaps the first two elements at the top of stack A 	        */
+/* swap_a: Swaps the first two elements at the top of stack A */
 /* ************************************************************************** */
 
 void	ft_sa(t_list **a, int print)
@@ -31,8 +31,9 @@ void	ft_sa(t_list **a, int print)
 }
 
 /* ************************************************************************** */
-/*	 swap_b: Swaps the first two elements at the top of stack B	        */
+/* swap_b: Swaps the first two elements at the top of stack B */
 /* ************************************************************************** */
+
 void	ft_sb(t_list **b, int print)
 {
 	int	temp;
@@ -48,8 +49,9 @@ void	ft_sb(t_list **b, int print)
 }
 
 /* ************************************************************************** */
-/* 		swap_both: Performs sa and sb simultaneously	        */
+/* swap_both: Performs sa and sb simultaneously */
 /* ************************************************************************** */
+
 void	ft_ss(t_list **a, t_list **b)
 {
 	ft_sa(a, 0);
