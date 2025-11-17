@@ -18,8 +18,8 @@
 /* ************************************************************************** */
 # include <stdlib.h>
 # include <limits.h>
-# include "../libft/include/libft.h"
-# include "../libft/include/ft_printf.h"
+# include "libft/include/libft.h"
+# include "libft/include/ft_printf.h"
 
 /* ************************************************************************** */
 /*                           DATA STRUCTURES                                  */
@@ -39,5 +39,5 @@ typedef struct s_cost
 /* ************************************************************************** */
 /*       			  FUNCTIONS      			        */
 /* ************************************************************************** */
-
+int	main(int argc, char **args);
 #endif

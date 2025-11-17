@@ -26,9 +26,9 @@ OBJDIR  = objs
 #                                   SOURCES                                    #
 # **************************************************************************** #
 
-SRCS =
+SRCS =	main.c \
 
-OBJ		= $(addprefix $(OBJDIR)/, $(SRC:.c=.o))
+OBJ		= $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 LIBFT		= libft/libft.a
 # **************************************************************************** #
 #                                   RULES                                      #
@@ -41,7 +41,7 @@ $(NAME): $(OBJDIR) $(OBJ) $(LIBFT)
 	@echo "\033[1;32m✅ Compilado com sucesso: $(NAME)\033[0m"
 
 $(OBJDIR)/%.o: %.c 
-	@mkdir -p $(@D)  # ⚠️ CORREÇÃO: Garante que subdiretórios existam
+	@mkdir -p $(@D)
 	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 	@echo "\033[1;34mCompilando:\033[0m $<"
 
@@ -49,7 +49,7 @@ $(OBJDIR):
 	@mkdir -p $(OBJDIR)
 
 $(LIBFT):
-	@$(MAKE) $(RUNLIB) bonus
+	@$(MAKE) $(RUNLIB)
 	@echo "\033[1;36m📚 Libft compilada!\033[0m"
 clean:
 	@$(RM) -r $(OBJDIR)

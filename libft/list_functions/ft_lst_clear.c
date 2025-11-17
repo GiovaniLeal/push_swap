@@ -17,17 +17,18 @@
 /* function returns NULL. Traverses the list until the final element is       */
 /* reached and returns it.                                                    */
 /* ************************************************************************** */
-void	ft_lst_clear(t_list **lst)
+void	ft_lst_clear(t_list **lst, void (*del)(void *))
 {
 	t_list	*temp;
 
-	if (!lst)
+	if (!lst || !del)
 		return ;
 	while (*lst)
 	{
 		temp = (*lst)->next;
+		del((*lst)->content);
 		free(*lst);
 		*lst = temp;
 	}
-	free(temp);
+	*lst = NULL;
 }

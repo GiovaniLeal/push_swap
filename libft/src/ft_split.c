@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+
 static char	**handle_empty_sep(const char *s)
 {
 	char	**array;

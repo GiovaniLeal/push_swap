@@ -15,7 +15,7 @@
 /* ************************************************************************** */
 /* Creates a new linked list node with the given content.                     */
 /* ************************************************************************** */
-t_list	*ft_lst_new(int content)
+t_list	*ft_lst_new(void *content)
 {
 	t_list	*new_node;
 
