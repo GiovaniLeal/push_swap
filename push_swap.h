@@ -39,5 +39,6 @@ typedef struct s_cost
 /* ************************************************************************** */
 /*       			  FUNCTIONS      			        */
 /* ************************************************************************** */
-int	main(int argc, char **args);
+int	main(int argc, char **argv);
+int	ft_parse_and_init_stack(int argc, char *argv, t_list *stack);
 #endif
