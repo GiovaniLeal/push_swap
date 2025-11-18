@@ -41,7 +41,7 @@ static int	handle_numbers(char *str, t_list **stack)
 		free(value);
 		return (0);
 	}
-	ft_lsta_dd_back(stack, node);
+	ft_lst_add_back(stack, node);
 	return (1);
 }
 
@@ -81,19 +81,22 @@ static int	process_single_argument(char *arg, t_list **stack)
 
 	i = 0;
 	split = ft_split(arg, ' ');
-	if (!split)
+	if (!split || split[0] == NULL)
+	{
+		ft_free_split(split);
 		return (0);
+	}
 	while (split[i])
 	{
 		if (!handle_numbers(split[i], stack))
 		{
-			free_split(split);
+			ft_free_split(split);
 			cleanup(stack);
 			return (0);
 		}
 		i++;
 	}
-	free_split(split);
+	ft_free_split(split);
 	return (1);
 }
 

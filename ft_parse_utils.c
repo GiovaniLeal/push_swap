@@ -34,7 +34,7 @@ void	ft_free_split(char **split)
 void	cleanup(t_list **stack)
 {
 	if (stack && *stack)
-		ft_lstclear_bonus(stack, free);
+		ft_lst_clear(stack, free);
 }
 
 /* ************************************************************************** */

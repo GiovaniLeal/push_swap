@@ -27,8 +27,9 @@ OBJDIR  = objs
 # **************************************************************************** #
 
 SRCS =	main.c \
-	ft_parse_and_init_stack_a.c \
-	
+	ft_parse_and_init_stack.c \
+	ft_parse_utils.c \
+
 
 OBJ		= $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
 LIBFT		= libft/libft.a
