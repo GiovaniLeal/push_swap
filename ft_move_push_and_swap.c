@@ -63,7 +63,6 @@ void	ft_sa(t_list **a, int print)
 /* ************************************************************************** */
 /* swap_b: Swaps the first two elements at the top of stack B */
 /* ************************************************************************** */
-
 void	ft_sb(t_list **b, int print)
 {
 	int		*temp;

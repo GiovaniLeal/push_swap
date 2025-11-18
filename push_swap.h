@@ -45,11 +45,11 @@ int		ft_parse_and_init_stack(int argc, char **argv, t_list **stack);
 /* ************************************************** */
 /*         	 PARSE UTILS                      */
 /* ************************************************** */
+int		is_valid_number(char *str);
+int		check_duplicates(t_list *stack, int num);
 void	ft_free_split(char **split);
 void	cleanup(t_list **stack);
-int		check_duplicates(t_list *stack, int num);
 long	local_atol(const char *str);
-int		is_valid_number(char *str);
 
 /* ************************************************** */
 /*         	      MOVES                       */
@@ -60,5 +60,18 @@ void	ft_rrr(t_list **a, t_list **b);
 void	ft_ra(t_list **a, int print);
 void	ft_rb(t_list **b, int print);
 void	ft_rr(t_list **a, t_list **b);
+void	ft_pa(t_list **a, t_list **b);
+void	ft_pb(t_list **b, t_list **a);
+void	ft_sa(t_list **a, int print);
+void	ft_sb(t_list **b, int print);
 
+/* ************************************************** */
+/*                   SORT FUNCTION                    */
+/* ************************************************** */
+void	ft_small_sort(int argc, t_list **a);
+void	ft_sort_three(t_list **a);
+
+/* ************************************************** */
+/*                     SORT UTILS                     */
+/* ************************************************** */
 #endif

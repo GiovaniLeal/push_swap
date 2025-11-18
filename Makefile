@@ -31,7 +31,11 @@ SRCS =	main.c \
 	ft_parse_utils.c \
 	ft_move_reverse.c \
 	ft_move_rotate.c \
+	ft_move_push_and_swap.c \
+	ft_sort_small.c \
+	ft_sort_utils.c \
 	
+
 
 
 

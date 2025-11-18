@@ -48,8 +48,8 @@ int	main(int argc, char **argv)
 		ft_lst_clear(&stack_a, free);
 		return (0);
 	}
-	// if (argc - 1 <= 3)
-	// 	ft_small_sort(argc, &stack_a);
+	if (argc - 1 <= 3)
+		ft_sort_small(argc, &stack_a);
 	// else
 	// 	ft_turk_short(&stack_a, &stack_b);
 	ft_lst_clear(&stack_a, free);
