@@ -109,4 +109,3 @@ int	ft_parse_and_init_stack(int argc, char **argv, t_list **stack)
 		return (process_single_argument(argv[1], stack));
 	return (process_multiple_args(argc, argv, stack));
 }
-
