@@ -39,18 +39,26 @@ typedef struct s_cost
 /* ************************************************************************** */
 /*       			  FUNCTIONS      			        */
 /* ************************************************************************** */
-int	main(int argc, char **argv);
-int	ft_parse_and_init_stack(int argc, char **argv, t_list **stack);
+int		main(int argc, char **argv);
+int		ft_parse_and_init_stack(int argc, char **argv, t_list **stack);
 
 /* ************************************************** */
 /*         	 PARSE UTILS                      */
 /* ************************************************** */
 void	ft_free_split(char **split);
 void	cleanup(t_list **stack);
-int	check_duplicates(t_list *stack, int num);
+int		check_duplicates(t_list *stack, int num);
 long	local_atol(const char *str);
-int	is_valid_number(char *str);
+int		is_valid_number(char *str);
 
-
+/* ************************************************** */
+/*         	      MOVES                       */
+/* ************************************************** */
+void	ft_rra(t_list **a, int print);
+void	ft_rrb(t_list **b, int print);
+void	ft_rrr(t_list **a, t_list **b);
+void	ft_ra(t_list **a, int print);
+void	ft_rb(t_list **b, int print);
+void	ft_rr(t_list **a, t_list **b);
 
 #endif

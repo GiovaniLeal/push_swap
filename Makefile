@@ -29,6 +29,10 @@ OBJDIR  = objs
 SRCS =	main.c \
 	ft_parse_and_init_stack.c \
 	ft_parse_utils.c \
+	ft_move_reverse.c \
+	ft_move_rotate.c \
+	
+
 
 
 OBJ		= $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
