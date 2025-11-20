@@ -74,4 +74,5 @@ void	ft_sort_three(t_list **a);
 /* ************************************************** */
 /*                     SORT UTILS                     */
 /* ************************************************** */
+int	get_value(t_list *lst, int index);
 #endif

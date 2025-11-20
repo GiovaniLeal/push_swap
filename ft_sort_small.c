@@ -17,7 +17,7 @@ void	ft_small_sort(int argc, t_list **a)
 	int	num_elements;
 
 	num_elements = argc - 1;
-	if (num_elements == 2 && get_value(*a) > get_value((*a)->next))
+	if (num_elements == 2 && get_value(*a, 0) > get_value(*a, 1))
 		ft_sa(a, 1);
 	else if (num_elements == 3)
 		ft_sort_three(a);
@@ -30,22 +30,12 @@ void	ft_sort_three(t_list **a)
 	int	third;
 
 	first = get_value(*a);
-	second = get_value((*a)->next);
-	third = get_value((*a)->next->next);
+	second = get_value(*a, 1);
+	third = get_value(*a, 2);
 	if (first > second && first > third)
-	{
 		ft_ra(a, 1);
-		if (get_value(*a) > get_value((*a)->next))
-			ft_sa(a, 1);
-	}
 	else if (second > first && second > third)
-	{
 		ft_rra(a, 1);
-		if (get_value(*a) > get_value((*a)->next))
-			ft_sa(a, 1);
-	}
-	else if (get_value(*a) > get_value((*a)->next))
-	{
+	else if (get_value(*a, 0) > get_value(*a, 1))
 		ft_sa(a, 1);
-	}
 }
