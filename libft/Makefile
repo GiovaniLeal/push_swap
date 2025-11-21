@@ -38,6 +38,7 @@ LIBFT_SRC	= 		ft_atoi.c \
 
 # Libft - Funções de lista
 LIST_SRC	= ft_lst_add_back.c \
+			ft_lst_add_front.c \
 			  ft_lst_clear.c \
 			  ft_lst_last.c \
 			  ft_lst_new.c \

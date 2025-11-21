@@ -34,6 +34,8 @@ SRCS =	main.c \
 	ft_move_push_and_swap.c \
 	ft_sort_small.c \
 	ft_sort_utils.c \
+	ft_turk_sort.c \
+	ft_turk_utils.c \
 	
 
 

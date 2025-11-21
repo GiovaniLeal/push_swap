@@ -25,7 +25,7 @@ void	ft_ra(t_list **a, int print)
 	node_to_move = (*a);
 	*a = (*a)->next;
 	node_to_move->next = NULL;
-	ft_lstadd_back_bonus(a, node_to_move);
+	ft_lst_add_back(a, node_to_move);
 	if (print)
 		ft_printf("ra\n");
 }
@@ -43,7 +43,7 @@ void	ft_rb(t_list **b, int print)
 	node_to_move = (*b);
 	*b = (*b)->next;
 	node_to_move->next = NULL;
-	ft_lstadd_back_bonus(b, node_to_move);
+	ft_lst_add_back(b, node_to_move);
 	if (print)
 		ft_printf("rb\n");
 }

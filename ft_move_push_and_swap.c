@@ -23,7 +23,7 @@ void	ft_pa(t_list **a, t_list **b)
 		return ;
 	node_to_move = *b;
 	*b = (*b)->next;
-	ft_lstadd_front_bonus(a, node_to_move);
+	ft_lst_add_front(a, node_to_move);
 	ft_printf("pa\n");
 }
 
@@ -38,7 +38,7 @@ void	ft_pb(t_list **b, t_list **a)
 		return ;
 	node_to_move = *a;
 	*a = (*a)->next;
-	ft_lstadd_front_bonus(b, node_to_move);
+	ft_lst_add_front(b, node_to_move);
 	ft_printf("pb\n");
 }
 

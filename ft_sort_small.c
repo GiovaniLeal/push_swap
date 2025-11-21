@@ -29,13 +29,13 @@ void	ft_sort_three(t_list **a)
 	int	second;
 	int	third;
 
-	first = get_value(*a);
+	first = get_value(*a, 0);
 	second = get_value(*a, 1);
 	third = get_value(*a, 2);
 	if (first > second && first > third)
 		ft_ra(a, 1);
 	else if (second > first && second > third)
 		ft_rra(a, 1);
-	else if (get_value(*a, 0) > get_value(*a, 1))
+	if (get_value(*a, 0) > get_value(*a, 1))
 		ft_sa(a, 1);
 }

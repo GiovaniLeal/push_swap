@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 15:02:07 by giodos-s          #+#    #+#             */
-/*   Updated: 2025/11/17 20:23:08 by marvin           ###   ########.fr       */
+/*   Updated: 2025/11/20 12:28:26 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct s_list
 }	t_list;
 
 /* ------------ Funções de Lista Essenciais ------------ */
+void	ft_lst_add_front(t_list **lst, t_list *new);
 void	ft_lst_add_back(t_list **lst, t_list *new);
 void	ft_lst_clear(t_list **lst, void (*del)(void *));
 t_list	*ft_lst_last(t_list *lst);

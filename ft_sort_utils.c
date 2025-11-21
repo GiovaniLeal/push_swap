@@ -13,24 +13,76 @@
 #include "push_swap.h"
 
 /* ************************************************************************** */
-/*  Returns the content value stored at a given index of a t_list node.       */
+/* 	                        		FT_MIN			                          */
 /* ************************************************************************** */
-
-int	get_value(t_list *lst, int index)
+int	ft_min(int a, int b)
 {
-	int	count;
-	t_list	*current_node;
+	if (a < b)
+		return (a);
+	return (b);
+}
 
-	if (!lst || index < 0)
-		return (-1);
-	i = 0;
-	current_node = lst;
-	while (current_node && count < index)
+/* ************************************************************************** */
+/*                      			FT_ABS		  	                          */
+/* ************************************************************************** */
+int	ft_abs(int n)
+{
+	if (n < 0)
+		return (-n);
+	return (n);
+}
+
+/* ************************************************************************** */
+/* 	                    		FT_FIND_INDEX		                          */
+/* ************************************************************************** */
+int	ft_find_index(t_list *lst, int value)
+{
+	int	index;
+
+	index = 0;
+	while (lst)
 	{
-		current = current->next;
-		count++;
+		if (*(int *)lst->content == value)
+			return (index);
+		index++;
+		lst = lst->next;
 	}
-	if (!current)
-		return (-1);
-	return (current->content);
+	return (-1);
+}
+
+/* ************************************************************************** */
+/* 		                    	FT_FIND_EXTREME			                      */
+/* ************************************************************************** */
+int ft_find_extreme(t_list *lst, int find_max)
+{
+    int     value;
+
+    if (!lst)
+        return (0);
+
+    value = *(int *)lst->content;
+
+    while (lst)
+    {
+        if ((!find_max && *(int *)lst->content < value) ||
+            ( find_max && *(int *)lst->content > value))
+            value = *(int *)lst->content;
+
+        lst = lst->next;
+    }
+    return (value);
+}
+
+/* ************************************************************************** */
+/* 		                    	GET_VALUE			                          */
+/* ************************************************************************** */
+int get_value(t_list *lst, int index)
+{
+    while (index-- > 0 && lst)
+        lst = lst->next;
+
+    if (!lst || !lst->content)
+        return 0;
+
+    return *(int *)lst->content;
 }
