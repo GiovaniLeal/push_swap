@@ -27,7 +27,7 @@ void	ft_ra(t_list **a, int print)
 	node_to_move->next = NULL;
 	ft_lst_add_back(a, node_to_move);
 	if (print)
-		ft_printf("ra\n");
+		ft_printf(1, "ra\n");
 }
 
 /* ************************************************************************** */
@@ -45,7 +45,7 @@ void	ft_rb(t_list **b, int print)
 	node_to_move->next = NULL;
 	ft_lst_add_back(b, node_to_move);
 	if (print)
-		ft_printf("rb\n");
+		ft_printf(1, "rb\n");
 }
 
 /* ************************************************************************** */
@@ -56,5 +56,5 @@ void	ft_rr(t_list **a, t_list **b, int is_print)
 	ft_ra(a, 0);
 	ft_rb(b, 0);
 	if (is_print)
-		ft_printf("rr\n");
+		ft_printf(1, "rr\n");
 }

@@ -43,7 +43,7 @@ int	main(int argc, char **argv)
 	if (argc < 2)
 		return (0);
 	if (!ft_parse_and_init_stack(argc, argv, &stack_a))
-		return (ft_printf("Error\n"));
+		return (ft_printf(2, "Error\n"));
 	if (ft_is_ordered(&stack_a))
 	{
 		ft_lst_clear(&stack_a, free);

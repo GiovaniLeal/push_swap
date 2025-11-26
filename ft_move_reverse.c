@@ -31,7 +31,7 @@ void	ft_rra(t_list **a, int print)
 	(*a) = last_node;
 	second_last_node->next = NULL;
 	if (print)
-		ft_printf("rra\n");
+		ft_printf(1, "rra\n");
 }
 
 /* ************************************************************************** */
@@ -53,7 +53,7 @@ void	ft_rrb(t_list **b, int print)
 	(*b) = last_node;
 	second_last_node->next = NULL;
 	if (print)
-		ft_printf("rrb\n");
+		ft_printf(1, "rrb\n");
 }
 
 /* ************************************************************************** */
@@ -64,5 +64,5 @@ void	ft_rrr(t_list **a, t_list **b, int is_print)
 	ft_rra(a, 0);
 	ft_rrb(b, 0);
 	if (is_print)
-		ft_printf("rrr\n");
+		ft_printf(1, "rrr\n");
 }

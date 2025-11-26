@@ -25,7 +25,7 @@ void	ft_pa(t_list **a, t_list **b, int is_print)
 	*b = (*b)->next;
 	ft_lst_add_front(a, node_to_move);
 	if (is_print)
-		ft_printf("pa\n");
+		ft_printf(1, "pa\n");
 }
 
 /* ************************************************************************** */
@@ -41,7 +41,7 @@ void	ft_pb(t_list **b, t_list **a, int is_print)
 	*a = (*a)->next;
 	ft_lst_add_front(b, node_to_move);
 	if (is_print)
-		ft_printf("pb\n");
+		ft_printf(1, "pb\n");
 }
 
 /* ************************************************************************** */
@@ -59,7 +59,7 @@ void	ft_sa(t_list **a, int print)
 	(*a)->content = (*a)->next->content;
 	(*a)->next->content = temp;
 	if (print)
-		ft_printf("sa\n");
+		ft_printf(1, "sa\n");
 }
 
 /* ************************************************************************** */
@@ -75,5 +75,5 @@ void	ft_sb(t_list **b, int print)
 	(*b)->content = (*b)->next->content;
 	(*b)->next->content = temp;
 	if (print)
-		ft_printf("sb\n");
+		ft_printf(1, "sb\n");
 }

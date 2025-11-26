@@ -98,7 +98,7 @@ static t_node	*ft_list_parser(const char *format, va_list args)
 /*   - Builds a linked list of nodes                               */
 /*   - Writes final output to stdout                               */
 /* *************************************************************** */
-int	ft_printf(const char *format, ...)
+int	ft_printf(int fd, const char *format, ...)
 {
 	va_list	args;
 	t_node	*list_head;
@@ -114,7 +114,7 @@ int	ft_printf(const char *format, ...)
 	current = list_head;
 	while (current)
 	{
-		total_len += write(1, current->str_content, current->len);
+		total_len += write(fd, current->str_content, current->len);
 		current = current->next;
 	}
 	ft_list_clear(&list_head);

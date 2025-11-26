@@ -33,7 +33,7 @@ typedef struct s_node
 }	t_node;
 
 /*************** FT_PRINTF ***************/
-int			ft_printf(const char *format, ...);
+int	ft_printf(int fd, const char *format, ...);
 
 /*************** PUT FUNCTIONS ***************/
 char		*ft_put_num(const char specifier, long long numb);
