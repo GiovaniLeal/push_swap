@@ -59,9 +59,10 @@ void	ft_rrb(t_list **b, int print)
 /* ************************************************************************** */
 /*  	Applies reverse rotate to stack A and B simultaneously 	        */
 /* ************************************************************************** */
-void	ft_rrr(t_list **a, t_list **b)
+void	ft_rrr(t_list **a, t_list **b, int is_print)
 {
 	ft_rra(a, 0);
 	ft_rrb(b, 0);
-	ft_printf("rrr\n");
+	if (is_print)
+		ft_printf("rrr\n");
 }

@@ -56,12 +56,12 @@ long	local_atol(const char *str);
 /* ************************************************** */
 void	ft_rra(t_list **a, int print);
 void	ft_rrb(t_list **b, int print);
-void	ft_rrr(t_list **a, t_list **b);
+void	ft_rrr(t_list **a, t_list **b, int is_print);
 void	ft_ra(t_list **a, int print);
 void	ft_rb(t_list **b, int print);
-void	ft_rr(t_list **a, t_list **b);
-void	ft_pa(t_list **a, t_list **b);
-void	ft_pb(t_list **b, t_list **a);
+void	ft_rr(t_list **a, t_list **b, int is_print);
+void	ft_pa(t_list **a, t_list **b, int is_print);
+void	ft_pb(t_list **b, t_list **a, int is_print);
 void	ft_sa(t_list **a, int print);
 void	ft_sb(t_list **b, int print);
 

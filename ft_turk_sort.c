@@ -20,19 +20,19 @@ static void	ft_exec_best_move(t_list **a, t_list **b, t_cost cost)
 {
 	while (cost.cost_a > 0 && cost.cost_b > 0)
 	{
-		ft_rr(a, b);
+		ft_rr(a, b, 1);
 		cost.cost_a--;
 		cost.cost_b--;
 	}
 	while (cost.cost_a < 0 && cost.cost_b < 0)
 	{
-		ft_rrr(a, b);
+		ft_rrr(a, b, 1);
 		cost.cost_a++;
 		cost.cost_b++;
 	}
 	ft_move_stack(a, cost.cost_a, 'a');
 	ft_move_stack(b, cost.cost_b, 'b');
-	ft_pa(a, b);
+	ft_pa(a, b, 1);
 }
 
 /* ************************************************************************** */
@@ -113,7 +113,7 @@ void	ft_turk_sort(t_list **a, t_list **b)
 
 	size_stack_a = ft_lst_size(*a);
 	while (size_stack_a-- > 3)
-		ft_pb(b, a);
+		ft_pb(b, a, 1);
 	ft_sort_three(a);
 	while (*b)
 	{

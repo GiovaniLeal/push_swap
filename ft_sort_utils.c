@@ -50,8 +50,8 @@ int	ft_find_extreme(t_list *lst, int find_max)
 	value = *(int *)lst->content;
 	while (lst)
 	{
-		if (!find_max && *(int *)lst->content < value)
-			|| (find_max && *(int *)lst->content > value)
+		if ((!find_max && *(int *)lst->content < value)
+			|| (find_max && *(int *)lst->content > value))
 			value = *(int *)lst->content;
 		lst = lst->next;
 	}

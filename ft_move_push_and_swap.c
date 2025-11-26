@@ -15,7 +15,7 @@
 /* ************************************************************************** */
 /* 	Moves the first element from stack B to the top of stack A 	        */
 /* ************************************************************************** */
-void	ft_pa(t_list **a, t_list **b)
+void	ft_pa(t_list **a, t_list **b, int is_print)
 {
 	t_list	*node_to_move;
 
@@ -24,13 +24,14 @@ void	ft_pa(t_list **a, t_list **b)
 	node_to_move = *b;
 	*b = (*b)->next;
 	ft_lst_add_front(a, node_to_move);
-	ft_printf("pa\n");
+	if (is_print)
+		ft_printf("pa\n");
 }
 
 /* ************************************************************************** */
 /* 	Moves the first element from stack A to the top of stack B	        */
 /* ************************************************************************** */
-void	ft_pb(t_list **b, t_list **a)
+void	ft_pb(t_list **b, t_list **a, int is_print)
 {
 	t_list	*node_to_move;
 
@@ -39,7 +40,8 @@ void	ft_pb(t_list **b, t_list **a)
 	node_to_move = *a;
 	*a = (*a)->next;
 	ft_lst_add_front(b, node_to_move);
-	ft_printf("pb\n");
+	if (is_print)
+		ft_printf("pb\n");
 }
 
 /* ************************************************************************** */

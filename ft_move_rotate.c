@@ -51,9 +51,10 @@ void	ft_rb(t_list **b, int print)
 /* ************************************************************************** */
 /*  		Rotates stack A and B simultaneously 		        */
 /* ************************************************************************** */
-void	ft_rr(t_list **a, t_list **b)
+void	ft_rr(t_list **a, t_list **b, int is_print)
 {
 	ft_ra(a, 0);
 	ft_rb(b, 0);
-	ft_printf("rr\n");
+	if (is_print)
+		ft_printf("rr\n");
 }
