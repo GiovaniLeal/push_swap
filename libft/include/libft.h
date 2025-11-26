@@ -6,7 +6,7 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/07/11 15:02:07 by giodos-s          #+#    #+#             */
-/*   Updated: 2025/11/20 12:28:26 by marvin           ###   ########.fr       */
+/*   Updated: 2025/11/26 20:20:02 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ char	*ft_strchr(const char *s, int c);
 char	*ft_strdup(const char *s);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 size_t	ft_strlen(const char *s);
+char	*ft_strjoin(char *s1, char *s2);
 
 /* ************************************************************************** */
 /*                        FUNCOES DE LISTAS  (ESSENCIAIS)                     */

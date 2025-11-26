@@ -34,7 +34,8 @@ LIBFT_SRC	= 		ft_atoi.c \
 			  ft_strchr.c \
 			  ft_strdup.c \
 			  ft_strlen.c \
-			  ft_substr.c
+			  ft_substr.c \
+			  ft_strjoin.c
 
 # Libft - Funções de lista
 LIST_SRC	= ft_lst_add_back.c \
@@ -51,6 +52,9 @@ PRINTF_SRC	= ft_printf.c \
 			ft_node_utils.c \
 			ft_numb_utils.c \
 
+GNL_SRC		= get_next_line.c \
+			get_next_line_utils.c
+
 # **************************************************************************** #
 #                               PATHS COMPLETOS                                #
 # **************************************************************************** #
@@ -58,10 +62,12 @@ PRINTF_SRC	= ft_printf.c \
 SRC_DIR		= src
 LIST_DIR		= list_functions
 PRINTF_DIR	= printf
+GNL_DIR		= gnl
 
 SRC		= $(addprefix $(SRC_DIR)/, $(LIBFT_SRC)) \
 			  $(addprefix $(LIST_DIR)/, $(LIST_SRC)) \
-			  $(addprefix $(PRINTF_DIR)/, $(PRINTF_SRC))
+			  $(addprefix $(PRINTF_DIR)/, $(PRINTF_SRC)) \
+			  $(addprefix $(GNL_DIR)/, $(GNL_SRC))
 
 OBJ			= $(SRC:.c=.o)
 
