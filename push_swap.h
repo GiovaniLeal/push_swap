@@ -72,18 +72,18 @@ void	ft_small_sort(int argc, t_list **a);
 void	ft_sort_three(t_list **a);
 void	ft_turk_sort(t_list **a, t_list **b);
 void	ft_movement_optimization(t_cost *current);
-int	ft_find_position_a(t_list *a, int value);
+int		ft_find_position_a(t_list *a, int value);
 void	ft_calculate_cost(t_list *a, t_list *b, t_cost *cost, int index_b);
 void	ft_rotate_min_top(t_list **a);
-void    ft_move_stack(t_list **stack, int cost, char name);
+void	ft_move_stack(t_list **stack, int cost, char name);
 
 /* ************************************************** */
 /*                     SORT UTILS                     */
 /* ************************************************** */
-int	get_value(t_list *lst, int index);
-int 	ft_find_extreme(t_list *lst, int find_max);
-int	ft_find_index(t_list *lst, int value);
-int	ft_abs(int n);
-int	ft_min(int a, int b);
+int		get_value(t_list *lst, int index);
+int		ft_find_extreme(t_list *lst, int find_max);
+int		ft_find_index(t_list *lst, int value);
+int		ft_abs(int n);
+int		ft_min(int a, int b);
 
 #endif

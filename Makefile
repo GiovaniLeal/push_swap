@@ -18,7 +18,6 @@ CC      = cc
 CFLAGS  = -Wall -Wextra -Werror
 INCLUDE = -I include -I libft/include
 RM      = rm -f
-RUNLIB  = -C libft
 OBJDIR  = objs
 
 
@@ -53,7 +52,7 @@ $(NAME): $(OBJDIR) $(OBJ) $(LIBFT)
 	@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 	@echo "\033[1;32m✅ Compilado com sucesso: $(NAME)\033[0m"
 
-$(OBJDIR)/%.o: %.c 
+$(OBJDIR)/%.o: %.c $(wildcard include/*.h)
 	@mkdir -p $(@D)
 	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
 	@echo "\033[1;34mCompilando:\033[0m $<"
@@ -62,16 +61,16 @@ $(OBJDIR):
 	@mkdir -p $(OBJDIR)
 
 $(LIBFT):
-	@$(MAKE) $(RUNLIB)
+	@$(MAKE) -C libft
 	@echo "\033[1;36m📚 Libft compilada!\033[0m"
 clean:
 	@$(RM) -r $(OBJDIR)
-	@$(MAKE) $(RUNLIB) clean
+	@$(MAKE) -C libft clean
 	@echo "\033[1;33m🧹 Objetos removidos.\033[0m"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@$(MAKE) $(RUNLIB) fclean
+	@$(MAKE) -C libft fclean
 	@echo "\033[1;31m🗑️  Binário removido.\033[0m"
 
 re: fclean all

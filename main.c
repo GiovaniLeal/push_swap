@@ -34,7 +34,7 @@ static int	ft_is_ordered(t_list **stack)
 /* ************************************************************************** */
 int	main(int argc, char **argv)
 {
-	int	size;
+	int		size;
 	t_list	*stack_a;
 	t_list	*stack_b;
 
@@ -50,9 +50,8 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	size = ft_lst_size(stack_a);
-	if (size<= 3) //aqui se o o nume4ro for passado por " 1 , 2 ,3 " como valida como mais de um argumento?
+	if (size <= 3)
 		ft_small_sort(argc, &stack_a);
-	
 	else
 		ft_turk_sort(&stack_a, &stack_b);
 	ft_lst_clear(&stack_a, free);

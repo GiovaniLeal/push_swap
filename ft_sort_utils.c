@@ -6,15 +6,12 @@
 /*   By: giodos-s <giodos-s@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/17 22:48:11 by giodos-s          #+#    #+#             */
-/*   Updated: 2025/11/17 22:48:11 by giodos-s         ###   ########.fr       */
+/*   Updated: 2025/11/24 18:06:33 by giodos-s         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-/* ************************************************************************** */
-/* 	                        		FT_MIN			                          */
-/* ************************************************************************** */
 int	ft_min(int a, int b)
 {
 	if (a < b)
@@ -22,9 +19,6 @@ int	ft_min(int a, int b)
 	return (b);
 }
 
-/* ************************************************************************** */
-/*                      			FT_ABS		  	                          */
-/* ************************************************************************** */
 int	ft_abs(int n)
 {
 	if (n < 0)
@@ -32,9 +26,6 @@ int	ft_abs(int n)
 	return (n);
 }
 
-/* ************************************************************************** */
-/* 	                    		FT_FIND_INDEX		                          */
-/* ************************************************************************** */
 int	ft_find_index(t_list *lst, int value)
 {
 	int	index;
@@ -50,39 +41,28 @@ int	ft_find_index(t_list *lst, int value)
 	return (-1);
 }
 
-/* ************************************************************************** */
-/* 		                    	FT_FIND_EXTREME			                      */
-/* ************************************************************************** */
-int ft_find_extreme(t_list *lst, int find_max)
+int	ft_find_extreme(t_list *lst, int find_max)
 {
-    int     value;
+	int	value;
 
-    if (!lst)
-        return (0);
-
-    value = *(int *)lst->content;
-
-    while (lst)
-    {
-        if ((!find_max && *(int *)lst->content < value) ||
-            ( find_max && *(int *)lst->content > value))
-            value = *(int *)lst->content;
-
-        lst = lst->next;
-    }
-    return (value);
+	if (!lst)
+		return (0);
+	value = *(int *)lst->content;
+	while (lst)
+	{
+		if (!find_max && *(int *)lst->content < value)
+			|| (find_max && *(int *)lst->content > value)
+			value = *(int *)lst->content;
+		lst = lst->next;
+	}
+	return (value);
 }
 
-/* ************************************************************************** */
-/* 		                    	GET_VALUE			                          */
-/* ************************************************************************** */
-int get_value(t_list *lst, int index)
+int	get_value(t_list *lst, int index)
 {
-    while (index-- > 0 && lst)
-        lst = lst->next;
-
-    if (!lst || !lst->content)
-        return 0;
-
-    return *(int *)lst->content;
+	while (index-- > 0 && lst)
+		lst = lst->next;
+	if (!lst || lst->content)
+		return (0);
+	return (*(int *)lst->content);
 }

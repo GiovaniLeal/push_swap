@@ -15,10 +15,10 @@
 # **************************************************************************** #
 
 NAME		= libft.a
-CC			= cc
+CC		= cc
 CFLAGS		= -Wall -Wextra -Werror
-AR			= ar rcs
-RM			= rm -f
+AR		= ar rcs
+RM		= rm -f
 
 # **************************************************************************** #
 #                               ARQUIVOS FONTE                                 #
@@ -56,10 +56,10 @@ PRINTF_SRC	= ft_printf.c \
 # **************************************************************************** #
 
 SRC_DIR		= src
-LIST_DIR	= list_functions
+LIST_DIR		= list_functions
 PRINTF_DIR	= printf
 
-SRC			= $(addprefix $(SRC_DIR)/, $(LIBFT_SRC)) \
+SRC		= $(addprefix $(SRC_DIR)/, $(LIBFT_SRC)) \
 			  $(addprefix $(LIST_DIR)/, $(LIST_SRC)) \
 			  $(addprefix $(PRINTF_DIR)/, $(PRINTF_SRC))
 
@@ -75,7 +75,7 @@ $(NAME): $(OBJ)
 	@$(AR) $(NAME) $(OBJ)
 	@echo "✅ $(NAME) criada com sucesso!"
 
-%.o: %.c
+%.o: %.c $(wildcard include/*.h)
 	@$(CC) $(CFLAGS) -I./include -c $< -o $@
 
 # **************************************************************************** #
