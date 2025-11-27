@@ -62,7 +62,7 @@ int	get_value(t_list *lst, int index)
 {
 	while (index-- > 0 && lst)
 		lst = lst->next;
-	if (!lst || lst->content)
+	if (!lst || !lst->content)
 		return (0);
 	return (*(int *)lst->content);
 }

@@ -12,16 +12,33 @@
 
 #include "push_swap.h"
 
-void	ft_small_sort(int argc, t_list **a)
+void	ft_sort_five(t_list **a, t_list **b)
 {
-	int	num_elements;
+	int	size;
+	int	min;
+	int	pos_index;
 
-	num_elements = argc - 1;
-	if (num_elements == 2 && get_value(*a, 0) > get_value(*a, 1))
-		ft_sa(a, 1);
-	else if (num_elements == 3)
-		ft_sort_three(a);
+	size = ft_lst_size(*a);
+	while (size-- > 3)
+		ft_pb(b, a, 1);
+	ft_sort_three(a);
+	if (get_value(*b, 0) < get_value(*b, 1))
+		ft_sb(b, 1);
+	ft_pa(a, b, 1);
+	ft_pa(a, b, 1);
+	min = ft_find_extreme(*a, 0);
+	pos_index = ft_find_index(*a, min);
+	if (pos_index <= ft_lst_size(*a) / 2)
+		while (pos_index-- > 0)
+			ft_ra(a, 1);
+	else
+	{
+		pos_index = ft_lst_size(*a) - pos_index;
+		while (pos_index-- > 0)
+			ft_rra(a, 1);
+	}	
 }
+
 
 void	ft_sort_three(t_list **a)
 {
@@ -39,3 +56,18 @@ void	ft_sort_three(t_list **a)
 	if (get_value(*a, 0) > get_value(*a, 1))
 		ft_sa(a, 1);
 }
+
+void	ft_small_sort(int argc, t_list **a, t_list **b)
+{
+	int	num_elements;
+
+	num_elements = argc - 1;
+	if (num_elements == 2 && get_value(*a, 0) > get_value(*a, 1))
+		ft_sa(a, 1);
+	else if (num_elements == 3)
+		ft_sort_three(a);
+	else if (num_elements == 5)
+		ft_sort_five(a, b);
+}
+
+
