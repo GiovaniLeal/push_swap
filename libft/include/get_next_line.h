@@ -36,5 +36,4 @@ char	*ft_extract_line(char *raw_txt);
 char	*ft_read_line(int fd, char *raw);
 char	*ft_join_and_free(char *raw_text, char *temp_buffer);
 
-
 #endif

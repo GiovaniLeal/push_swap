@@ -68,7 +68,7 @@ void	ft_sb(t_list **b, int print);
 /* ************************************************** */
 /*                   SORT FUNCTION                    */
 /* ************************************************** */
-int	ft_is_ordered(t_list **stack);
+int		ft_is_ordered(t_list **stack);
 void	ft_small_sort(int argc, t_list **a);
 void	ft_sort_three(t_list **a);
 void	ft_sort_five(t_list **a, t_list **b);

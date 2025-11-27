@@ -33,8 +33,7 @@ typedef struct s_node
 }	t_node;
 
 /*************** FT_PRINTF ***************/
-int	ft_printf(int fd, const char *format, ...);
-
+int			ft_printf(int fd, const char *format, ...);
 /*************** PUT FUNCTIONS ***************/
 char		*ft_put_num(const char specifier, long long numb);
 char		*ft_put_hex(const char specifier, unsigned int number);
@@ -49,9 +48,6 @@ void		ft_add_literal_node(t_node **head, const char *start, size_t len);
 t_node		*ft_node_create(const char *str, size_t len);
 
 /*************** LIB UTILS ***************/
-
-//char		*ft_strdup(const char *s);
 char		*ft_itoa_base(long long value, const char *base);
 char		*ft_utoa_base(unsigned long long value, const char *base);
-void		*ft_memcpy(void *dest, const void *src, size_t n);
 #endif
