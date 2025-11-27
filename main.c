@@ -50,8 +50,8 @@ int	main(int argc, char **argv)
 		return (0);
 	}
 	size = ft_lst_size(stack_a);
-	if (size <= 5)
-		ft_small_sort(argc, &stack_a, &stack_b);
+	if (size <= 3)
+		ft_small_sort(argc, &stack_a);
 	else
 		ft_turk_sort(&stack_a, &stack_b);
 	ft_lst_clear(&stack_a, free);

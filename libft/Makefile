@@ -79,7 +79,7 @@ all: $(NAME)
 
 $(NAME): $(OBJ)
 	@$(AR) $(NAME) $(OBJ)
-	@echo "✅ $(NAME) criada com sucesso!"
+	
 
 %.o: %.c $(wildcard include/*.h)
 	@$(CC) $(CFLAGS) -I./include -c $< -o $@
@@ -90,11 +90,11 @@ $(NAME): $(OBJ)
 
 clean:
 	@$(RM) $(OBJ)
-	@echo "🧹 Objetos da libft removidos"
+	
 
 fclean: clean
 	@$(RM) $(NAME)
-	@echo "🗑️  $(NAME) removida"
+	
 
 re: fclean all
 

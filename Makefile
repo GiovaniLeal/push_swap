@@ -18,61 +18,53 @@ CC      = cc
 CFLAGS  = -Wall -Wextra -Werror
 INCLUDE = -I include -I libft/include
 RM      = rm -f
-OBJDIR  = objs
-
 
 # **************************************************************************** #
 #                                   SOURCES                                    #
 # **************************************************************************** #
 
 SRCS =	main.c \
-	ft_parse_and_init_stack.c \
-	ft_parse_utils.c \
-	ft_move_reverse.c \
-	ft_move_rotate.c \
-	ft_move_push_and_swap.c \
-	ft_sort_small.c \
-	ft_sort_utils.c \
-	ft_turk_sort.c \
-	ft_turk_utils.c \
-	
+        ft_parse_and_init_stack.c \
+        ft_parse_utils.c \
+        ft_move_reverse.c \
+        ft_move_rotate.c \
+        ft_move_push_and_swap.c \
+        ft_sort_small.c \
+        ft_sort_utils.c \
+        ft_turk_sort.c \
+        ft_turk_utils.c \
 
+OBJ     = $(SRCS:.c=.o)
+LIBFT   = libft/libft.a
 
-
-
-OBJ		= $(addprefix $(OBJDIR)/, $(SRCS:.c=.o))
-LIBFT		= libft/libft.a
 # **************************************************************************** #
 #                                   RULES                                      #
 # **************************************************************************** #
 
 all: $(NAME)
 
-$(NAME): $(OBJDIR) $(OBJ) $(LIBFT)
+$(NAME): $(OBJ) $(LIBFT)
 	@$(CC) $(CFLAGS) $(OBJ) $(LIBFT) -o $(NAME)
 	@echo "\033[1;32m✅ Compilado com sucesso: $(NAME)\033[0m"
 
-$(OBJDIR)/%.o: %.c $(wildcard include/*.h)
-	@mkdir -p $(@D)
+%.o: %.c $(wildcard include/*.h)
 	@$(CC) $(CFLAGS) $(INCLUDE) -c $< -o $@
-	@echo "\033[1;34mCompilando:\033[0m $<"
-
-$(OBJDIR):
-	@mkdir -p $(OBJDIR)
 
 $(LIBFT):
-	@$(MAKE) -C libft
+	@$(MAKE) --no-print-directory -C libft
 	@echo "\033[1;36m📚 Libft compilada!\033[0m"
+
 clean:
-	@$(RM) -r $(OBJDIR)
-	@$(MAKE) -C libft clean
+	@$(RM) $(OBJ)
+	@$(MAKE) --no-print-directory -C libft clean
 	@echo "\033[1;33m🧹 Objetos removidos.\033[0m"
 
 fclean: clean
 	@$(RM) $(NAME)
-	@$(MAKE) -C libft fclean
+	@$(MAKE) --no-print-directory -C libft fclean
 	@echo "\033[1;31m🗑️  Binário removido.\033[0m"
 
 re: fclean all
 
 .PHONY: all clean fclean re
+
